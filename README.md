@@ -24,9 +24,9 @@ https://xpawelek1211.github.io/szyfry/
 
 ### Specyfikacja programu:
 **Wejście** - tekst do zaszyfrowania  
-**Wyjście** - tekst zaszfrowany wymienionymi powyżej szyframi uwzględziając wybrane przez użytkownika ustawienia
+**Wyjście** - tekst zaszyfrowany wymienionymi powyżej szyframi uwzględziając wybrane przez użytkownika ustawienia
 
-Ze względu na ograniczenia w kluczach niektórych szyfrów, znaki inne niż litery nie zawsze zostaną zaszyfrowane. W nich polskie litery zostaną zamienione na ich łacińskie odpowiedniki.
+Ze względu na ograniczenia w kluczach niektórych szyfrów, znaki inne niż litery nie zawsze zostaną zaszyfrowane. W tych przypadkach polskie litery są zamieniane na ich łacińskie odpowiedniki.
 
 ---
 
