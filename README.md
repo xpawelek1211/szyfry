@@ -26,7 +26,7 @@ https://xpawelek1211.github.io/szyfry/
 **Wejście** - tekst do zaszyfrowania  
 **Wyjście** - tekst zaszyfrowany wymienionymi powyżej szyframi uwzględziając wybrane przez użytkownika ustawienia
 
-Ze względu na ograniczenia w kluczach niektórych szyfrów, znaki inne niż litery nie zawsze zostaną zaszyfrowane. W tych przypadkach polskie litery są zamieniane na ich łacińskie odpowiedniki.
+Ze względu na ograniczenia w kluczach niektórych szyfrów, znaki inne niż litery nie zawsze zostaną zaszyfrowane. W tych przypadkach polskie litery są zamieniane na ich łacińskie odpowiedniki. Litery niewystępujące w polskim alfabecie, czyli Q, V i X również nie wszędzie działają.
 
 ---
 
