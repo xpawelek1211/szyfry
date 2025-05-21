@@ -32,3 +32,10 @@ Ze względu na ograniczenia w kluczach niektórych szyfrów, znaki inne niż lit
 
 ### Lista zmian:
 **24.05.2025** - Pierwsza wersja tej aplikacji
+
+---
+
+### Źródła grafik:
+Tło - [Freepik](https://www.freepik.com/free-vector/gradient-geometric-shapes-landing-page-template_5306081.htm)  
+Kłódka - [Flaticon](https://www.flaticon.com/free-icon/padlock_456112)  
+Ikony kopiowania i pytajnika - [Google Material Symbols](https://fonts.google.com/icons)
