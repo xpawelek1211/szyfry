@@ -7,7 +7,7 @@ https://xpawelek1211.github.io/szyfry/
 
 ---
 
-### Szyfry, którymi możesz zaszyfrować tekst:
+### Szyfry dostępne w tej aplikacji:
 - Zamiana (gaderypoluki)
 - Zamiana góra-dół
 - Alfabet Morse’a
