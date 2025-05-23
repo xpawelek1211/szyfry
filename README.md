@@ -1,5 +1,6 @@
 # Szyfry
-Proste narzędzie do szyfrowania tekstu
+Oto proste narzędzie do szyfrowania tekstu w formie aplikacji internetowej.  
+Zostało stworzone jako zadanie na sprawność harcerską Programista\*\*\*.
 
 https://xpawelek1211.github.io/szyfry/
 
