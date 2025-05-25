@@ -25,6 +25,7 @@
 <div style="justify-items: center; margin-top: 5vh">
   <h1 style="font-size: 50px; text-align: center;">Wpisz tekst do zaszyfrowania:</h1>
   <input id="input" type="text" style="width: 75vw">
+  <div style="margin-top: 2vh"><a id="link" style="font-size: 20px" href="https://github.com/xpawelek1211/szyfry" target="_blank">Zobacz na GitHubie</a></div>
 </div>
 <div style="margin-top: 8vh">
   <hr>
@@ -134,6 +135,21 @@
   <hr>
   <div style="align-items: center; display: flex; flex-direction: column; padding: 5vh">
     <div style="align-items: center; display: flex; margin-bottom: 3vh; margin-left: 7vh; max-width: 75vw">
+      <h1 style="margin: 0">Szyfr Cezara</h1>
+      <img src="help.svg" title="Dowiedz się więcej o tym szyfrze" onclick="help('cezar')" style="cursor: pointer; height: 4vh; margin-left: 3vh">
+    </div>
+    <div id="selector">
+      <h2 style="justify-self: center; margin: 2vh">Przesunięcie:</h2>
+      <input id="cezar_key" type="number" value="3" style="width: 70px">
+    </div>
+    <div style="align-items: center; display: flex; justify-content: center; margin-left: 7vh; width: 75vw">
+      <textarea id="cezar" rows="3" readonly></textarea>
+      <img src="copy.svg" title="Skopiuj tekst" onclick="navigator.clipboard.writeText(cezar.value)" style="cursor: pointer; width: 4vh; margin-left: 3vh">
+    </div>
+  </div>
+  <hr>
+  <div style="align-items: center; display: flex; flex-direction: column; padding: 5vh">
+    <div style="align-items: center; display: flex; margin-bottom: 3vh; margin-left: 7vh; max-width: 75vw">
       <h1 style="margin: 0">Alfabet Galaktyczny</h1>
       <img src="help.svg" title="Dowiedz się więcej o tym szyfrze" onclick="help('sga')" style="cursor: pointer; height: 4vh; margin-left: 3vh">
     </div>
@@ -172,7 +188,7 @@ function help(id) {
     help_text.innerHTML = "W kodzie Morse’a każdej literze jest przypisana sekwencja krótkich i długich sygnałów (kropek i kresek).</br>Pojedyncza pionowa kreska oznacza koniec litery, a podwójna - koniec wyrazu.</br>W wersji „dżdżownicy” wybrzuszenie w górę to kropka, a w dół to kreska.</br></br><a id=\"link\" href=\"https://pl.wikipedia.org/wiki/Kod_Morse%E2%80%99a#Litery\" target=\"_blank\">Artykuł na Wikipedii (kody znaków)</a>";
   } else if (id == "czek") {
     help_title.innerText = "Czekoladka";
-    help_text.innerHTML = "Każda litera to fragment poniższej tabelki z nią samą zamienioną na kropkę.</br></br><img src=\"czek.svg\" title=\"Szyfr czekoladka\" style=\"height: 100px; width: -webkit-fill-available;\">";
+    help_text.innerHTML = "Każda litera to fragment poniższej tabelki z nią samą zamienioną na kropkę.</br></br><img src=\"czek.svg\" title=\"Szyfr czekoladka\" style=\"height: 100px; width: -webkit-fill-available\">";
   } else if (id == "mnoz") {
     help_title.innerText = "Tabliczka mnożenia";
     help_text.innerHTML = "Litery są szyfrowane jako numer rzędu i kolumny, w której się znajdują.</br></br><p style=\"font-family: monospace; font-size: 20px; margin: 0\">× 12345</br>1 ABCDE</br>2 FGHIJ</br>3 KLMNO</br>4 PRSTU</br>5 WYZ  </p>";
@@ -185,9 +201,12 @@ function help(id) {
   } else if (id == "kar") {
     help_title.innerText = "Karolinka";
     help_text.innerHTML = "Kluczem jest tabelka utworzona przez poziome zapisanie słowa kluczowego</br>i uzupełnienie wierszy kolejnymi literami alfabetu.</br>Zaszyfrowana wiadomość to numer kolumny i wiersza w tabelce, określający współrzędne litery.";
+  } else if (id == "cezar") {
+    help_title.innerText = "Szyfr Cezara";
+    help_text.innerHTML = "Szyfrowanie polega na zamienieniu każdej litery z występującą określoną liczbę miejsc dalej w alfabecie.</br></br><a id=\"link\" href=\"cezar.cpp\" download=\"cezar.cpp\">Pobierz program w C++</a>";
   } else if (id == "sga") {
     help_title.innerText = "Alfabet Galaktyczny";
-    help_text.innerHTML = "Każdej literze jest przypisany symbol:</br></br><img src=\"sga.svg\" title=\"Alfabet Galaktyczny\" style=\"height: 140px; width: -webkit-fill-available;\">";
+    help_text.innerHTML = "Każdej literze jest przypisany symbol:</br></br><img src=\"sga.svg\" title=\"Alfabet Galaktyczny\" style=\"height: 140px; width: -webkit-fill-available\">";
   } else if (id == "ud") {
     help_title.innerText = "Tekst do góry nogami";
     help_text.innerHTML = "<p style=\"margin: 0; rotate: 180deg\">Po prostu spójrz z nieco innej perspektywy 🙂</p>";
@@ -201,6 +220,7 @@ function help(id) {
 <script src="js/ulam.js"></script>
 <script src="js/kom.js"></script>
 <script src="js/kar.js"></script>
+<script src="js/cezar.js"></script>
 <script src="js/sga.js"></script>
 <script src="js/ud.js"></script>
 </body>
