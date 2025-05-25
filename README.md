@@ -17,6 +17,7 @@ https://xpawelek1211.github.io/szyfry/
 - Ułamki
 - Szyfr komórkowy
 - Karolinka
+- Szyfr Cezara
 - Alfabet Galaktyczny
 
 Żeby dowiedzieć się, jak działają poszczególne szyfry, kliknij ikonę pytajnika w aplikacji.
@@ -32,6 +33,7 @@ Ze względu na ograniczenia w kluczach niektórych szyfrów, znaki inne niż lit
 ---
 
 ### Lista zmian:
+**25.05.2025** - Dodano szyfr Cezara  
 **24.05.2025** - Pierwsza wersja tej aplikacji
 
 ---
