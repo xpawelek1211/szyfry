@@ -17,11 +17,13 @@ https://xpawelek1211.github.io/szyfry/
 - Ułamki
 - Szyfr komórkowy
 - Karolinka
+- Kod flagowy
 - Szyfr Cezara
 - Alfabet Galaktyczny
 
 Żeby dowiedzieć się, jak działają poszczególne szyfry, kliknij ikonę pytajnika w aplikacji.
 
+W przypadku szyfrów generowanych jako obrazy, po wpisaniu długiego tekstu zostanie wyświetlony tylko początek. Aby zobaczyć całość, pobierz obrazek.
 ---
 
 ### Specyfikacja programu:
@@ -33,6 +35,8 @@ Ze względu na ograniczenia w kluczach niektórych szyfrów, znaki inne niż lit
 ---
 
 ### Lista zmian:
+**12.06.2025** - Dodano kod flagowy  
+**11.06.2025** - Dodano możliwość generowania czekoladki i Alfabetu Galaktycznego jako obraz oraz naprawiono wyświetlanie symboli w tekstowych zapisach tych szyfrów  
 **25.05.2025** - Dodano szyfr Cezara  
 **24.05.2025** - Pierwsza wersja tej aplikacji
 
