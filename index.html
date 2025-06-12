@@ -11,9 +11,8 @@
 <meta property="og:description" content="Proste narzędzie do szyfrowania tekstu">
 <meta property="og:image" content="https://xpawelek1211.github.io/szyfry/img.png">
 <link rel="icon" href="icon.svg">
-<title>Szyfry</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap">
 <link rel="stylesheet" href="style.css">
+<title>Szyfry</title>
 </head>
 <body>
 <noscript>
@@ -74,7 +73,18 @@
       <h1 style="margin: 0">Czekoladka</h1>
       <img src="help.svg" title="Dowiedz się więcej o tym szyfrze" onclick="help('czek')" style="cursor: pointer; height: 4vh; margin-left: 3vh">
     </div>
-    <div style="align-items: center; display: flex; justify-content: center; margin-left: 7vh; width: 75vw">
+    <div id="selector">
+      <h2 style="margin: 1vh">Wynik jako:</h2>
+      <label id="label">Obraz<input type="radio" name="czek_format" id="czek_obraz" checked><span id="radio"></span></label>
+      <label id="label">Tekst<input type="radio" name="czek_format" id="czek_tekst"><span id="radio"></span></label>
+    </div>
+    <div id="czek_wynik_obraz" style="align-items: center; display: flex; flex-direction: column; justify-content: center; width: 75vw">
+      <div id="czek_img" style="background: #FFFFFF; border-radius: 4px; height: 36px; padding: 12px; width: 50vw"></div>
+      <div style="background: #FFFFFF; border-radius: 4px; margin-top: 1vh; padding: 6px 12px; text-align: center">
+        <a id="link" class="czek_img_dl" download="czekoladka.svg" style="font-size: 20px; font-weight: bold">Pobierz jako SVG</a></br>Lub zrób zrzut/wycinek ekranu <a id="link" href="ms-screenclip://">(⊞ + Shift + S)</a>
+      </div>
+    </div>
+    <div id="czek_wynik_tekst" style="align-items: center; display: none; justify-content: center; margin-left: 7vh; width: 75vw">
       <textarea id="czek" rows="3" style="font-family: Arial" readonly></textarea>
       <img src="copy.svg" title="Skopiuj tekst" onclick="navigator.clipboard.writeText(czek.value)" style="cursor: pointer; width: 4vh; margin-left: 3vh">
     </div>
@@ -150,10 +160,34 @@
   <hr>
   <div style="align-items: center; display: flex; flex-direction: column; padding: 5vh">
     <div style="align-items: center; display: flex; margin-bottom: 3vh; margin-left: 7vh; max-width: 75vw">
+      <h1 style="margin: 0">Kod flagowy</h1>
+      <img src="help.svg" title="Dowiedz się więcej o tym szyfrze" onclick="help('mks')" style="cursor: pointer; height: 4vh; margin-left: 3vh">
+    </div>
+    <div style="align-items: center; display: flex; flex-direction: column; justify-content: center; width: 75vw">
+      <div id="mks_img" style="background: #AAAAAA; border-radius: 4px; height: 60px; padding: 12px; width: 50vw"></div>
+      <div style="background: #FFFFFF; border-radius: 4px; margin-top: 1vh; padding: 6px 12px; text-align: center">
+        <a id="link" class="mks_img_dl" download="mks.svg" style="font-size: 20px; font-weight: bold">Pobierz jako SVG</a> (tło będzie przezroczyste)</br>Lub zrób zrzut/wycinek ekranu <a id="link" href="ms-screenclip://">(⊞ + Shift + S)</a>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div style="align-items: center; display: flex; flex-direction: column; padding: 5vh">
+    <div style="align-items: center; display: flex; margin-bottom: 3vh; margin-left: 7vh; max-width: 75vw">
       <h1 style="margin: 0">Alfabet Galaktyczny</h1>
       <img src="help.svg" title="Dowiedz się więcej o tym szyfrze" onclick="help('sga')" style="cursor: pointer; height: 4vh; margin-left: 3vh">
     </div>
-    <div style="align-items: center; display: flex; justify-content: center; margin-left: 7vh; width: 75vw">
+    <div id="selector">
+      <h2 style="margin: 1vh">Wynik jako:</h2>
+      <label id="label">Obraz<input type="radio" name="sga_format" id="sga_obraz" checked><span id="radio"></span></label>
+      <label id="label">Tekst<input type="radio" name="sga_format" id="sga_tekst"><span id="radio"></span></label>
+    </div>
+    <div id="sga_wynik_obraz" style="align-items: center; display: flex; flex-direction: column; justify-content: center; width: 75vw">
+      <div id="sga_img" style="background: #FFFFFF; border-radius: 4px; height: 36px; padding: 12px; width: 50vw"></div>
+      <div style="background: #FFFFFF; border-radius: 4px; margin-top: 1vh; padding: 6px 12px; text-align: center">
+        <a id="link" class="sga_img_dl" download="sga.svg" style="font-size: 20px; font-weight: bold">Pobierz jako SVG</a></br>Lub zrób zrzut/wycinek ekranu <a id="link" href="ms-screenclip://">(⊞ + Shift + S)</a>
+      </div>
+    </div>
+    <div id="sga_wynik_tekst" style="align-items: center; display: none; justify-content: center; margin-left: 7vh; width: 75vw">
       <textarea id="sga" rows="3" style="font-family: Tahoma" readonly></textarea>
       <img src="copy.svg" title="Skopiuj tekst" onclick="navigator.clipboard.writeText(sga.value)" style="cursor: pointer; width: 4vh; margin-left: 3vh">
     </div>
@@ -204,6 +238,9 @@ function help(id) {
   } else if (id == "cezar") {
     help_title.innerText = "Szyfr Cezara";
     help_text.innerHTML = "Szyfrowanie polega na zamienieniu każdej litery z występującą określoną liczbę miejsc dalej w alfabecie.</br></br><a id=\"link\" href=\"cezar.cpp\" download=\"cezar.cpp\">Pobierz program w C++</a>";
+  } else if (id == "mks") {
+    help_title.innerText = "Kod flagowy";
+    help_text.innerHTML = "Litery i cyfry są zamieniane na odpowiadające im flagi Międzynarodowego Kodu Sygnałowego.</br></br><a id=\"link\" href=\"https://pl.wikipedia.org/wiki/Mi%C4%99dzynarodowy_kod_sygna%C5%82owy#Tabele_znak%C3%B3w_z_flagami_pojedynczymi\" target=\"_blank\">Artykuł na Wikipedii (lista flag)</a>";
   } else if (id == "sga") {
     help_title.innerText = "Alfabet Galaktyczny";
     help_text.innerHTML = "Każdej literze jest przypisany symbol:</br></br><img src=\"sga.svg\" title=\"Alfabet Galaktyczny\" style=\"height: 140px; width: -webkit-fill-available\">";
@@ -221,6 +258,7 @@ function help(id) {
 <script src="js/kom.js"></script>
 <script src="js/kar.js"></script>
 <script src="js/cezar.js"></script>
+<script src="js/mks.js"></script>
 <script src="js/sga.js"></script>
 <script src="js/ud.js"></script>
 </body>
