@@ -37,7 +37,7 @@ setInterval(() => {
     "Z": "5×3"
   },
   mnoz_input = input.value.normalize("NFD")
-  .replace(/[\u0300-\u036f]/g, "")
+  .replace(/[\u0300-\u036F]/g, "")
   .replace(/ł/g, "l").replace(/Ł/g, "L")
   .replace(/đ/g, "d").replace(/Đ/g, "D")
   .replace(/ß/g, "ss").replace(/ẞ/g, "SS")
