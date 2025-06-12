@@ -24,6 +24,7 @@ https://xpawelek1211.github.io/szyfry/
 Żeby dowiedzieć się, jak działają poszczególne szyfry, kliknij ikonę pytajnika w aplikacji.
 
 W przypadku szyfrów generowanych jako obrazy, po wpisaniu długiego tekstu zostanie wyświetlony tylko początek. Aby zobaczyć całość, pobierz obrazek.
+
 ---
 
 ### Specyfikacja programu:
