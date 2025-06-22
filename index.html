@@ -160,6 +160,17 @@
   <hr>
   <div style="align-items: center; display: flex; flex-direction: column; padding: 5vh">
     <div style="align-items: center; display: flex; margin-bottom: 3vh; margin-left: 7vh; max-width: 75vw">
+      <h1 style="margin: 0">Szyfr symbolowy (Leet)</h1>
+      <img src="help.svg" title="Dowiedz się więcej o tym szyfrze" onclick="help('leet')" style="cursor: pointer; height: 4vh; margin-left: 3vh">
+    </div>
+    <div style="align-items: center; display: flex; justify-content: center; margin-left: 7vh; width: 75vw">
+      <textarea id="leet" rows="3" readonly></textarea>
+      <img src="copy.svg" title="Skopiuj tekst" onclick="navigator.clipboard.writeText(leet.value)" style="cursor: pointer; width: 4vh; margin-left: 3vh">
+    </div>
+  </div>
+  <hr>
+  <div style="align-items: center; display: flex; flex-direction: column; padding: 5vh">
+    <div style="align-items: center; display: flex; margin-bottom: 3vh; margin-left: 7vh; max-width: 75vw">
       <h1 style="margin: 0">Kod flagowy</h1>
       <img src="help.svg" title="Dowiedz się więcej o tym szyfrze" onclick="help('mks')" style="cursor: pointer; height: 4vh; margin-left: 3vh">
     </div>
@@ -238,6 +249,9 @@ function help(id) {
   } else if (id == "cezar") {
     help_title.innerText = "Szyfr Cezara";
     help_text.innerHTML = "Szyfrowanie polega na zamienieniu każdej litery z występującą określoną liczbę miejsc dalej w alfabecie.</br></br><a id=\"link\" href=\"cezar.cpp\" download=\"cezar.cpp\">Pobierz program w C++</a>";
+  } else if (id == "leet") {
+    help_title.innerText = "Szyfr symbolowy (Leet)";
+    help_text.innerHTML = "Litery są utworzone z podobnie wyglądających cyfr i symboli.";
   } else if (id == "mks") {
     help_title.innerText = "Kod flagowy";
     help_text.innerHTML = "Litery i cyfry są zamieniane na odpowiadające im flagi Międzynarodowego Kodu Sygnałowego.</br></br><a id=\"link\" href=\"https://pl.wikipedia.org/wiki/Mi%C4%99dzynarodowy_kod_sygna%C5%82owy#Tabele_znak%C3%B3w_z_flagami_pojedynczymi\" target=\"_blank\">Artykuł na Wikipedii (lista flag)</a>";
@@ -258,6 +272,7 @@ function help(id) {
 <script src="js/kom.js"></script>
 <script src="js/kar.js"></script>
 <script src="js/cezar.js"></script>
+<script src="js/leet.js"></script>
 <script src="js/mks.js"></script>
 <script src="js/sga.js"></script>
 <script src="js/ud.js"></script>
