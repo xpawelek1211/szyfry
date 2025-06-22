@@ -17,9 +17,11 @@ https://xpawelek1211.github.io/szyfry/
 - Ułamki
 - Szyfr komórkowy
 - Karolinka
-- Kod flagowy
 - Szyfr Cezara
+- Szyfr symbolowy (Leet)
+- Kod flagowy
 - Alfabet Galaktyczny
+- Tekst do góry nogami
 
 Żeby dowiedzieć się, jak działają poszczególne szyfry, kliknij ikonę pytajnika w aplikacji.
 
@@ -36,6 +38,7 @@ Ze względu na ograniczenia w kluczach niektórych szyfrów, znaki inne niż lit
 ---
 
 ### Lista zmian:
+**22.06.2025** - Dodano szyfr symbolowy (Leet)  
 **12.06.2025** - Dodano kod flagowy  
 **11.06.2025** - Dodano możliwość generowania czekoladki i Alfabetu Galaktycznego jako obraz oraz naprawiono wyświetlanie symboli w tekstowych zapisach tych szyfrów  
 **25.05.2025** - Dodano szyfr Cezara  
