@@ -1,7 +1,4 @@
 # Szyfry
-
----
-
 Oto proste narzędzie do szyfrowania tekstu w formie aplikacji internetowej.  
 Zostało stworzone jako zadanie na sprawność harcerską Programista\*\*\*.
 
