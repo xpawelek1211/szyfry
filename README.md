@@ -1,4 +1,7 @@
 # Szyfry
+
+---
+
 Oto proste narzędzie do szyfrowania tekstu w formie aplikacji internetowej.  
 Zostało stworzone jako zadanie na sprawność harcerską Programista\*\*\*.
 
@@ -38,6 +41,7 @@ Ze względu na ograniczenia w kluczach niektórych szyfrów, znaki inne niż lit
 ---
 
 ### Lista zmian:
+**03.08.2025** - Dodano możliwość dodania konturu do flag kodu flagowego  
 **22.06.2025** - Dodano szyfr symbolowy (Leet)  
 **12.06.2025** - Dodano kod flagowy  
 **11.06.2025** - Dodano możliwość generowania czekoladki i Alfabetu Galaktycznego jako obraz oraz naprawiono wyświetlanie symboli w tekstowych zapisach tych szyfrów  
