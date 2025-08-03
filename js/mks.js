@@ -48,7 +48,12 @@ setInterval(() => {
   .replace(/ð/g, "d").replace(/Ð/g, "D")
   .replace(/þ/g, "th").replace(/Þ/g, "TH")
   .replace(/ñ/g, "n").replace(/Ñ/g, "N");
-  pos = 0; svgcode = '<svg height="60px" xmlns="http://www.w3.org/2000/svg"><title>Kod flagowy</title><g id="mks_svg">';
+  if (kontur.checked) {
+    stroke = "style=\"stroke: #000000; stroke-width: 1.5\"";
+  } else {
+    stroke = "";
+  }
+  pos = 0; svgcode = '<svg height="60px" xmlns="http://www.w3.org/2000/svg"><title>Kod flagowy</title><g id="mks_svg"' + stroke + '>';
   mks_img.innerHTML = svgcode;
   for (let i = 0; i <= mks_input.length - 1; i++) {
     if (mks_input.toUpperCase()[i] in mks_img_data) {
