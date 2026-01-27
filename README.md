@@ -1,6 +1,6 @@
 # Szyfry
 Oto proste narzędzie do szyfrowania tekstu w formie aplikacji internetowej.  
-Zostało stworzone jako zadanie na sprawność harcerską Programista\*\*\*.
+Zostało stworzone jako zadanie na sprawność harcerską [Programista\*\*\*](https://sim.zhp.pl/merit-badge/104?level=1).
 
 https://xpawelek1211.github.io/szyfry/
 
@@ -19,6 +19,7 @@ https://xpawelek1211.github.io/szyfry/
 - Karolinka
 - Szyfr Cezara
 - Szyfr symbolowy (Leet)
+- Szyfr binarny
 - Kod flagowy
 - Alfabet Galaktyczny
 - Tekst do góry nogami
@@ -33,13 +34,14 @@ W przypadku szyfrów generowanych jako obrazy, po wpisaniu długiego tekstu zost
 **Wejście** - tekst do zaszyfrowania  
 **Wyjście** - tekst zaszyfrowany wymienionymi powyżej szyframi uwzględniając wybrane przez użytkownika ustawienia
 
-Ze względu na ograniczenia w kluczach niektórych szyfrów, znaki inne niż litery nie zawsze zostaną zaszyfrowane. W tych przypadkach polskie litery są zamieniane na ich łacińskie odpowiedniki. Litery niewystępujące w polskim alfabecie, czyli Q, V i X również nie wszędzie działają.
+Ze względu na ograniczenia w kluczach niektórych szyfrów, znaki inne niż litery nie zawsze zostaną zakodowane. W tych przypadkach polskie litery są zamieniane na ich łacińskie odpowiedniki. Litery niewystępujące w polskim alfabecie, czyli Q, V i X również nie wszędzie działają.
 
 ---
 
 ### Lista zmian:
+**27.01.2025** - Dodano szyfr binarny - z dedykacją dla Dominika, zoptymalizowano działanie programu przy kodowaniu długich tekstów oraz zmieniono położenie pola do wpisywania tekstu tak, aby zawsze było na górze  
 **03.08.2025** - Dodano możliwość dodania konturu do flag kodu flagowego  
-**22.06.2025** - Dodano szyfr symbolowy (Leet)  
+**22.06.2025** - Dodano szyfr symbolowy (Leet) - z dedykacją dla Franka  
 **12.06.2025** - Dodano kod flagowy  
 **11.06.2025** - Dodano możliwość generowania czekoladki i Alfabetu Galaktycznego jako obraz oraz naprawiono wyświetlanie symboli w tekstowych zapisach tych szyfrów  
 **25.05.2025** - Dodano szyfr Cezara  
