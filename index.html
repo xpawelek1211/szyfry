@@ -21,12 +21,12 @@
     <b><a id="link" style="font-size: 20px" href="https://www.google.com/search?q=jak+włączyć+javascript+w+przeglądarce" target="_blank">Tutaj dowiesz się, jak to zrobić</a></b>
   </div>
 </noscript>
-<div style="align-items: center; display: flex; flex-direction: column; margin-top: 5vh">
+<div style="align-items: center; background-attachment: fixed; background-image: url('bg.svg'); background-size: cover; display: flex; flex-direction: column; position: fixed; padding-bottom: 3vh; padding-top: 5vh; width: 100vw; z-index: 1">
   <h1 style="font-size: 50px; text-align: center;">Wpisz tekst do zaszyfrowania:</h1>
   <input id="input" type="text" style="width: 75vw">
   <div style="margin-top: 2vh"><a id="link" style="font-size: 20px" href="https://github.com/xpawelek1211/szyfry" target="_blank">Zobacz na GitHubie</a></div>
 </div>
-<div style="margin-top: 8vh">
+<div style="margin-top: 350px">
   <hr>
   <div style="align-items: center; display: flex; flex-direction: column; padding: 5vh">
     <div style="align-items: center; display: flex; margin-bottom: 3vh; margin-left: 7vh; max-width: 75vw">
@@ -171,6 +171,17 @@
   <hr>
   <div style="align-items: center; display: flex; flex-direction: column; padding: 5vh">
     <div style="align-items: center; display: flex; margin-bottom: 3vh; margin-left: 7vh; max-width: 75vw">
+      <h1 style="margin: 0">Szyfr binarny</h1>
+      <img src="help.svg" title="Dowiedz się więcej o tym szyfrze" onclick="help('bin')" style="cursor: pointer; height: 4vh; margin-left: 3vh">
+    </div>
+    <div style="align-items: center; display: flex; justify-content: center; margin-left: 7vh; width: 75vw">
+      <textarea id="bin" rows="3" style="font-family: monospace" readonly></textarea>
+      <img src="copy.svg" title="Skopiuj tekst" onclick="navigator.clipboard.writeText(bin.value)" style="cursor: pointer; width: 4vh; margin-left: 3vh">
+    </div>
+  </div>
+  <hr>
+  <div style="align-items: center; display: flex; flex-direction: column; padding: 5vh">
+    <div style="align-items: center; display: flex; margin-bottom: 3vh; margin-left: 7vh; max-width: 75vw">
       <h1 style="margin: 0">Kod flagowy</h1>
       <img src="help.svg" title="Dowiedz się więcej o tym szyfrze" onclick="help('mks')" style="cursor: pointer; height: 4vh; margin-left: 3vh">
     </div>
@@ -224,45 +235,51 @@
   <div id="help_text"></div>
 </div>
 <script>
+const help_data = {
+  gadery_title: "Zamiana (gaderypoluki)",
+  gadery_text: "Kluczem szyfru są pary liter, gdzie każdej szyfrowanej literze jest przypisywany jej odpowiednik z pary.</br>Jeżeli jakaś litera nie występuje w kluczu, pozostawia się ją bez zmian.</br></br>W przypadku zamiany góra-dół klucz powstaje przez zapisanie połówek alfabetu w dwóch rzędach</br>i utworzenie par z liter na górze i na dole:</br></br><p style=\"font-family: monospace; font-size: 20px; margin: 0\">AĄBCĆDEĘFGHIJKLŁ</br>MNŃOÓPRSŚTUWYZŹŻ</p>",
+
+  morse_title: "Alfabet Morse’a",
+  morse_text: "W kodzie Morse’a każdej literze jest przypisana sekwencja krótkich i długich sygnałów (kropek i kresek).</br>Pojedyncza pionowa kreska oznacza koniec litery, a podwójna - koniec wyrazu.</br>W wersji „dżdżownicy” wybrzuszenie w górę to kropka, a w dół to kreska.</br></br><a id=\"link\" href=\"https://pl.wikipedia.org/wiki/Kod_Morse%E2%80%99a#Litery\" target=\"_blank\">Artykuł na Wikipedii (kody znaków)</a>",
+
+  czek_title: "Czekoladka",
+  czek_text: "Każda litera to fragment poniższej tabelki z nią samą zamienioną na kropkę.</br></br><img src=\"czek.svg\" title=\"Czekoladka\" style=\"height: 100px; width: -webkit-fill-available\">",
+
+  mnoz_title: "Tabliczka mnożenia",
+  mnoz_text: "Litery są szyfrowane jako numer rzędu i kolumny, w której się znajdują.</br></br><p style=\"font-family: monospace; font-size: 20px; margin: 0\">× 12345</br>1 ABCDE</br>2 FGHIJ</br>3 KLMNO</br>4 PRSTU</br>5 WYZ  </p>",
+
+  ulam_title: "Ułamki",
+  ulam_text: "Alfabet jest podzielony w ponumerowane grupy po pięć liter.</br>Wiadomość jest kodowana jako ułamek zwykły z pozycją</br>kodowanej litery w liczniku i numerem grupy, w której się znajduje w mianowniku.</br></br><p style=\"font-family: monospace; font-size: 15px; margin: 0\"><u>ABCDE</u> <u>FGHIJ</u> <u>KLMNO</u> <u>PRSTU</u> <u>WYZ</u></br>  1     2     3     4    5 </p>",
+
+  kom_title: "Szyfr komórkowy",
+  kom_text: "Szyfr działa tak, jak klawiatura w starych telefonach komórkowych.</br>Każdemu zbiorowi liter jest przypisana cyfra, którą należy powtórzyć tyle razy,</br>ile wynosi liczba porządkowa kodowanej litery w tym zbiorze.</br></br><p style=\"font-family: monospace; font-size: 18px; margin: 0\">  1   2   3  </br>     ABC DEF </br></br>  4   5   6  </br> GHI JKL MNO </br></br>  7   8   9  </br>PQRS TUV WXYZ</p>",
+
+  kar_title: "Karolinka",
+  kar_text: "Kluczem jest tabelka utworzona przez poziome zapisanie słowa kluczowego</br>i uzupełnienie wierszy kolejnymi literami alfabetu.</br>Zaszyfrowana wiadomość to numer kolumny i wiersza w tabelce, określający współrzędne litery.",
+
+  cezar_title: "Szyfr Cezara",
+  cezar_text: "Szyfrowanie polega na zamienieniu każdej litery z występującą określoną liczbę miejsc dalej w alfabecie.</br></br><a id=\"link\" href=\"cezar.cpp\" download=\"cezar.cpp\">Pobierz program w C++</a>",
+
+  leet_title: "Szyfr symbolowy (Leet)",
+  leet_text: "Litery są utworzone z podobnie wyglądających cyfr i symboli.",
+
+  bin_title: "Szyfr binarny",
+  bin_text: "Znaki są zamieniane na ich kody binarne z tabeli ASCII.</br></br><a id=\"link\" href=\"https://pl.wikipedia.org/wiki/ASCII#Tabela_kod%C3%B3w_ASCII\" target=\"_blank\">Artykuł na Wikipedii (kody znaków)</a>",
+
+  mks_title: "Kod flagowy",
+  mks_text: "Litery i cyfry są zamieniane na odpowiadające im flagi Międzynarodowego Kodu Sygnałowego.</br></br><a id=\"link\" href=\"https://pl.wikipedia.org/wiki/Mi%C4%99dzynarodowy_kod_sygna%C5%82owy#Tabele_znak%C3%B3w_z_flagami_pojedynczymi\" target=\"_blank\">Artykuł na Wikipedii (lista flag)</a>",
+
+  sga_title: "Alfabet Galaktyczny",
+  sga_text: "Każdej literze jest przypisany symbol:</br></br><img src=\"sga.svg\" title=\"Alfabet Galaktyczny\" style=\"height: 140px; width: -webkit-fill-available\">",
+
+  ud_title: "Tekst do góry nogami",
+  ud_text: "<p style=\"margin: 0; rotate: 180deg\">Po prostu spójrz z nieco innej perspektywy 🙂</p>"
+}
+
 function help(id) {
   help_box.classList.add("show");
-  if (id == "gadery") {
-    help_title.innerText = "Zamiana (gaderypoluki)";
-    help_text.innerHTML = "Kluczem szyfru są pary liter, gdzie każdej szyfrowanej literze jest przypisywany jej odpowiednik z pary.</br>Jeżeli jakaś litera nie występuje w kluczu, pozostawia się ją bez zmian.</br></br>W przypadku zamiany góra-dół klucz powstaje przez zapisanie połówek alfabetu w dwóch rzędach</br>i utworzenie par z liter na górze i na dole:</br></br><p style=\"font-family: monospace; font-size: 20px; margin: 0\">AĄBCĆDEĘFGHIJKLŁ</br>MNŃOÓPRSŚTUWYZŹŻ</p>";
-  } else if (id == "morse") {
-    help_title.innerText = "Alfabet Morse’a";
-    help_text.innerHTML = "W kodzie Morse’a każdej literze jest przypisana sekwencja krótkich i długich sygnałów (kropek i kresek).</br>Pojedyncza pionowa kreska oznacza koniec litery, a podwójna - koniec wyrazu.</br>W wersji „dżdżownicy” wybrzuszenie w górę to kropka, a w dół to kreska.</br></br><a id=\"link\" href=\"https://pl.wikipedia.org/wiki/Kod_Morse%E2%80%99a#Litery\" target=\"_blank\">Artykuł na Wikipedii (kody znaków)</a>";
-  } else if (id == "czek") {
-    help_title.innerText = "Czekoladka";
-    help_text.innerHTML = "Każda litera to fragment poniższej tabelki z nią samą zamienioną na kropkę.</br></br><img src=\"czek.svg\" title=\"Czekoladka\" style=\"height: 100px; width: -webkit-fill-available\">";
-  } else if (id == "mnoz") {
-    help_title.innerText = "Tabliczka mnożenia";
-    help_text.innerHTML = "Litery są szyfrowane jako numer rzędu i kolumny, w której się znajdują.</br></br><p style=\"font-family: monospace; font-size: 20px; margin: 0\">× 12345</br>1 ABCDE</br>2 FGHIJ</br>3 KLMNO</br>4 PRSTU</br>5 WYZ  </p>";
-  } else if (id == "ulam") {
-    help_title.innerText = "Ułamki";
-    help_text.innerHTML = "Alfabet jest podzielony w ponumerowane grupy po pięć liter.</br>Wiadomość jest kodowana jako ułamek zwykły z pozycją</br>kodowanej litery w liczniku i numerem grupy, w której się znajduje w mianowniku.</br></br><p style=\"font-family: monospace; font-size: 15px; margin: 0\"><u>ABCDE</u> <u>FGHIJ</u> <u>KLMNO</u> <u>PRSTU</u> <u>WYZ</u></br>  1     2     3     4    5 </p>";
-  } else if (id == "kom") {
-    help_title.innerText = "Szyfr komórkowy";
-    help_text.innerHTML = "Szyfr działa tak, jak klawiatura w starych telefonach komórkowych.</br>Każdemu zbiorowi liter jest przypisana cyfra, którą należy powtórzyć tyle razy,</br>ile wynosi liczba porządkowa kodowanej litery w tym zbiorze.</br></br><p style=\"font-family: monospace; font-size: 18px; margin: 0\">  1   2   3  </br>     ABC DEF </br></br>  4   5   6  </br> GHI JKL MNO </br></br>  7   8   9  </br>PQRS TUV WXYZ</p>";
-  } else if (id == "kar") {
-    help_title.innerText = "Karolinka";
-    help_text.innerHTML = "Kluczem jest tabelka utworzona przez poziome zapisanie słowa kluczowego</br>i uzupełnienie wierszy kolejnymi literami alfabetu.</br>Zaszyfrowana wiadomość to numer kolumny i wiersza w tabelce, określający współrzędne litery.";
-  } else if (id == "cezar") {
-    help_title.innerText = "Szyfr Cezara";
-    help_text.innerHTML = "Szyfrowanie polega na zamienieniu każdej litery z występującą określoną liczbę miejsc dalej w alfabecie.</br></br><a id=\"link\" href=\"cezar.cpp\" download=\"cezar.cpp\">Pobierz program w C++</a>";
-  } else if (id == "leet") {
-    help_title.innerText = "Szyfr symbolowy (Leet)";
-    help_text.innerHTML = "Litery są utworzone z podobnie wyglądających cyfr i symboli.";
-  } else if (id == "mks") {
-    help_title.innerText = "Kod flagowy";
-    help_text.innerHTML = "Litery i cyfry są zamieniane na odpowiadające im flagi Międzynarodowego Kodu Sygnałowego.</br></br><a id=\"link\" href=\"https://pl.wikipedia.org/wiki/Mi%C4%99dzynarodowy_kod_sygna%C5%82owy#Tabele_znak%C3%B3w_z_flagami_pojedynczymi\" target=\"_blank\">Artykuł na Wikipedii (lista flag)</a>";
-  } else if (id == "sga") {
-    help_title.innerText = "Alfabet Galaktyczny";
-    help_text.innerHTML = "Każdej literze jest przypisany symbol:</br></br><img src=\"sga.svg\" title=\"Alfabet Galaktyczny\" style=\"height: 140px; width: -webkit-fill-available\">";
-  } else if (id == "ud") {
-    help_title.innerText = "Tekst do góry nogami";
-    help_text.innerHTML = "<p style=\"margin: 0; rotate: 180deg\">Po prostu spójrz z nieco innej perspektywy 🙂</p>";
-  }
+  help_title.innerText = help_data[id+"_title"];
+  help_text.innerHTML = help_data[id+"_text"];
 }
 </script>
 <script src="js/gadery.js"></script>
@@ -274,6 +291,7 @@ function help(id) {
 <script src="js/kar.js"></script>
 <script src="js/cezar.js"></script>
 <script src="js/leet.js"></script>
+<script src="js/bin.js"></script>
 <script src="js/mks.js"></script>
 <script src="js/sga.js"></script>
 <script src="js/ud.js"></script>
