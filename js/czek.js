@@ -4,7 +4,7 @@ GH|IJ|KL  Y ╳ U  (Z)
 MN|OP|RS   ╱W╲
 */
 
-setInterval(() => {
+document.addEventListener("input", () => {
   czek.value = "";
   czek.style.color = "#000000";
   const czek_data = {
@@ -84,7 +84,7 @@ setInterval(() => {
   } else if (czek_obraz.checked) {
     czek_wynik_tekst.style.display = "none";
     czek_wynik_obraz.style.display = "flex";
-    pos = 0; svgcode = '<svg height="36px" xmlns="http://www.w3.org/2000/svg"><title>Czekoladka</title><g id="czek_svg" style="scale: 1.8897;">';
+    pos = 0; svgcode = '<!-- GENERATOR: https://xpawelek1211.github.io/szyfry --><svg height="36px" xmlns="http://www.w3.org/2000/svg"><title>Czekoladka</title><g id="czek_svg" style="scale: 1.8897;">';
     czek_img.innerHTML = svgcode;
     for (let i = 0; i <= czek_input.length - 1; i++) {
       if (czek_input.toUpperCase()[i] in czek_img_data) {

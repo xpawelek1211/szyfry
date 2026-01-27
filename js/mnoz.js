@@ -7,7 +7,7 @@
 5 WYZ
 */
 
-setInterval(() => {
+document.addEventListener("input", () => {
   mnoz.value = "";
   mnoz.style.color = "#000000";
   const mnoz_data = {

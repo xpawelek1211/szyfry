@@ -1,4 +1,4 @@
-setInterval(() => {
+document.addEventListener("input", () => {
   const abcd = "ABCDEFGHIJKLMNOPRSTUWYZABCDEFGH"; var ch = 1;
   kar_input = input.value.normalize("NFD")
   .replace(/[\u0300-\u036f]/g, "")

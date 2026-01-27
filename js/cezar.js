@@ -1,4 +1,4 @@
-setInterval(() => {
+document.addEventListener("input", () => {
   cezar.value = "";
   cezar.style.color = "#000000";
   const up = "AĄBCĆDEĘFGHIJKLŁMNŃOÓPRSŚTUWYZŹŻ", low = "aąbcćdeęfghijklłmnńoóprsśtuwyzźż";

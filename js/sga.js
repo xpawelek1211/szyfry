@@ -1,4 +1,4 @@
-setInterval(() => {
+document.addEventListener("input", () => {
   sga.value = "";
   sga.style.color = "#000000";
   const sga_data = {
@@ -85,7 +85,7 @@ setInterval(() => {
   } else if (sga_obraz.checked) {
     sga_wynik_tekst.style.display = "none";
     sga_wynik_obraz.style.display = "flex";
-    pos = 0; svgcode = '<svg height="36px" xmlns="http://www.w3.org/2000/svg"><title>Alfabet Galaktyczny</title><g id="sga_svg" style="scale: 1.8897;">';
+    pos = 0; svgcode = '<!-- GENERATOR: https://xpawelek1211.github.io/szyfry --><svg height="36px" xmlns="http://www.w3.org/2000/svg"><title>Alfabet Galaktyczny</title><g id="sga_svg" style="scale: 1.8897;">';
     sga_img.innerHTML = svgcode;
     for (let i = 0; i <= sga_input.length - 1; i++) {
       if (sga_input.toUpperCase()[i] in sga_img_data) {

@@ -1,4 +1,4 @@
-setInterval(() => {
+document.addEventListener("input", () => {
   var key = gadery_key.value;
   gadery.value = "";
   for (let i = 0; i <= input.value.length - 1; i++) {

@@ -1,4 +1,4 @@
-setInterval(() => {
+document.addEventListener("input", () => {
   leet.value = "";
   leet.style.color = "#000000";
   const leet_data = {

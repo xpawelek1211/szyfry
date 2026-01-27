@@ -1,6 +1,5 @@
-setInterval(() => {
+document.addEventListener("input", () => {
   ud.value = "";
-  ud.style.color = "#000000";
   const ud_data = {
     "a": "ɐ",
     "b": "q",

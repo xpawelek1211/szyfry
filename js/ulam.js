@@ -4,7 +4,7 @@ ABCDE FGHIJ KLMNO PRSTU WYZ
   1     2     3     4    5
 */
 
-setInterval(() => {
+document.addEventListener("input", () => {
   var licz = "", kreska = "", mian = "";
   ulam.value = "";
   ulam.style.color = "#000000";

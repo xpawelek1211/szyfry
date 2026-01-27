@@ -1,4 +1,4 @@
-setInterval(() => {
+document.addEventListener("input", () => {
   morse.value = "";
   morse.style.color = "#000000";
   if (morse_style.value == "proste") {

@@ -7,7 +7,7 @@
 PQRS TUV WXYZ
 */
 
-setInterval(() => {
+document.addEventListener("input", () => {
   kom.value = "";
   kom.style.color = "#000000";
   const kom_data = {

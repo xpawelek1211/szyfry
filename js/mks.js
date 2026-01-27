@@ -1,11 +1,11 @@
-setInterval(() => {
+document.addEventListener("input", () => {
   const mks_img_data = {
     "A": '<rect width="45" height="60" fill="#fff"/><path d="M 90,0 H 45 V 60 H 90 L 60,30 z" fill="#039"/>',
     "B": '<path d="M 90,0 H 0 V 60 H 90 L 60,30 z" fill="#f00"/>',
     "C": '<rect width="90" height="60" fill="#039"/><rect y="12" width="90" height="36" fill="#fff"/><rect y="24" width="90" height="12" fill="#f00"/>',
     "D": '<rect width="90" height="60" fill="#ff0"/><rect y="20" width="90" height="20" fill="#039"/>',
     "E": '<rect width="90" height="30" fill="#039"/><rect y="30" width="90" height="30" fill="#f00"/>',
-    "F": '<rect width="90" height="60" fill="#fff"/><path d="M 45,0 L 0,30 L 45,60 L 90,30" fill="#f00"/>',
+    "F": '<rect width="90" height="60" fill="#fff"/><path d="M 45,0 L 0,30 L 45,60 L 90,30 Z" fill="#f00"/>',
     "G": '<rect width="90" height="60" fill="#ff0"/><path d="M 15 0 L 15 60 L 30 60 L 30 0 L 15 0 z M 45 0 L 45 60 L 60 60 L 60 0 L 45 0 z M 75 0 L 75 60 L 90 60 L 90 0 L 75 0 z" fill="#039"/>',
     "H": '<rect width="45" height="60" fill="#fff"/><rect x="45" width="45" height="60" fill="#f00"/>',
     "I": '<rect width="90" height="60" fill="#ff0"/><circle cx="45" cy="30" r="16" fill="#000"/>',
@@ -53,7 +53,7 @@ setInterval(() => {
   } else {
     stroke = "";
   }
-  pos = 0; svgcode = '<svg height="60px" xmlns="http://www.w3.org/2000/svg"><title>Kod flagowy</title><g id="mks_svg"' + stroke + '>';
+  pos = 0; svgcode = '<!-- GENERATOR: https://xpawelek1211.github.io/szyfry --><svg height="60px" xmlns="http://www.w3.org/2000/svg"><title>Kod flagowy</title><g id="mks_svg"' + stroke + '>';
   mks_img.innerHTML = svgcode;
   for (let i = 0; i <= mks_input.length - 1; i++) {
     if (mks_input.toUpperCase()[i] in mks_img_data) {
