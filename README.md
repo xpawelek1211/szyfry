@@ -39,6 +39,7 @@ Ze względu na ograniczenia w kluczach niektórych szyfrów, znaki inne niż lit
 ---
 
 ### Lista zmian:
+**28.04.2026** - Dodano więcej kluczy do szyfru zamiana  
 **27.01.2026** - Dodano szyfr binarny - z dedykacją dla Dominika, zoptymalizowano działanie programu przy kodowaniu długich tekstów oraz zmieniono położenie pola do wpisywania tekstu tak, aby zawsze było na górze  
 **03.08.2025** - Dodano możliwość dodania konturu do flag kodu flagowego  
 **22.06.2025** - Dodano szyfr symbolowy (Leet) - z dedykacją dla Franka  
