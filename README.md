@@ -1,6 +1,6 @@
 # Szyfry
 Oto proste narzędzie do szyfrowania tekstu w formie aplikacji internetowej.  
-Zostało stworzone jako zadanie na sprawność harcerską [Programista\*\*\*](https://sim.zhp.pl/merit-badge/104?level=1).
+Zostało stworzone jako zadanie na sprawność harcerską [Programista \*\*\*](https://sim.zhp.pl/merit-badge/104?level=1).
 
 https://xpawelek1211.github.io/szyfry/
 
