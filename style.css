@@ -92,6 +92,7 @@ input, select, textarea {
   font-size: 30px;
   font-weight: bold;
   outline: none;
+  padding: 5px;
 }
 
 textarea {
@@ -164,7 +165,6 @@ label #checkbox::after {
   padding-left: 35px;
   position: relative;
   user-select: none;
-
 }
 
 #radio {
